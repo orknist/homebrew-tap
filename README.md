@@ -1,29 +1,15 @@
 # Orknist Tap
 
-Homebrew tap for Orknist formulae and casks.
+Homebrew tap for Orknist packages.
+
+## Packages
+
+| Package | Type | Description |
+| --- | --- | --- |
+| [pmpane](https://github.com/orknist/pmpane) | Cask | macOS app to list and upgrade outdated Homebrew, npm, pip, gem, uv, and bun packages |
+| [dlpick](https://github.com/orknist/dlpick) | Formula | Terminal picker for yt-dlp formats |
 
 ## Install
-
-### PM Pane (cask)
-
-```sh
-brew install --cask orknist/tap/pmpane
-```
-
-Upgrade later with:
-
-```sh
-brew update
-brew upgrade --cask pmpane
-```
-
-### dlpick (formula)
-
-```sh
-brew install orknist/tap/dlpick
-```
-
-Or tap once, then install by name:
 
 ```sh
 brew tap orknist/tap
@@ -31,7 +17,22 @@ brew install --cask pmpane
 brew install dlpick
 ```
 
-In a `Brewfile`:
+One-liners without tapping first:
+
+```sh
+brew install --cask orknist/tap/pmpane
+brew install orknist/tap/dlpick
+```
+
+Upgrade:
+
+```sh
+brew update
+brew upgrade --cask pmpane
+brew upgrade dlpick
+```
+
+`Brewfile`:
 
 ```ruby
 tap "orknist/tap"
