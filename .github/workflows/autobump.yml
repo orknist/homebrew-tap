@@ -1,4 +1,5 @@
-# brew tap-new uses this file to generate an autobump workflow for the new tap
+# brew tap-new uses this file to generate an autobump workflow for the new tap.
+# macos-latest is required: cask audit needs macOS plutil to read Info.plist.
 name: brew bump
 
 on:
@@ -10,6 +11,7 @@ on:
   schedule:
     # Every day at 0:25 UTC
     - cron: 25 0 * * *
+  workflow_dispatch:
 
 permissions: {}
 
@@ -19,7 +21,7 @@ defaults:
 
 jobs:
   autobump:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     permissions:
       contents: write
       pull-requests: write
@@ -32,7 +34,7 @@ jobs:
         id: git_setup
         uses: Homebrew/actions/git-user-config@eb02c69dbabdb66ff183c614f4ce7ab3c077592c # 2026.10.12.1
 
-      - name: Bump formulae
+      - name: Bump packages
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HOMEBREW_GIT_COMMITTER_NAME: ${{ steps.git_setup.outputs.name }}
