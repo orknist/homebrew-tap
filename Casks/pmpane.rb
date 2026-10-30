@@ -1,6 +1,6 @@
 cask "pmpane" do
-  version "0.1.0"
-  sha256 "c04c613742feed04bdd0151bd8627f1e4904e604396f5c72f1b85ffecd281a9b"
+  version "0.1.1"
+  sha256 "ee339d7e081ca3756b34a5d6a046b0845ccf2c517c4a45aefa41debfd149bae6"
 
   url "https://github.com/orknist/pmpane/releases/download/v#{version}/PMPane.zip"
   name "PM Pane"
